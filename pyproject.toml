@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "deep-full-connected-nn"
+version = "0.1.0"
+description = "Deep full-connected NN"
+authors = ["KafCoppelia <k740677208@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[[tool.poetry.source]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = false
+secondary = false
+
+
+[[tool.poetry.source]]
+name = "torchcpu"
+url = "https://download.pytorch.org/whl/cpu"
+default = false
+secondary = false
+
+
+[tool.poetry.group.cpu.dependencies]
+torch = {version = "1.12.1", source = "torchcpu"}
+torchvision = {version = "0.13.1", source = "torchcpu"}
+torchaudio = {version = "0.12.1", source = "torchcpu"}
+
+
+
+[tool.poetry.group.dev.dependencies]
+torchsummary = "^1.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
